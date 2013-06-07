@@ -2,6 +2,15 @@
 
 #include "smahal.h"
 
+void printMat(int nr, int nc, const double * data) {
+  for(int i = 0; i < nr; i++) {
+    for(int j = 0; j < nc - 1; j++)
+      printf("%g ", data[j * nr + i]);
+
+    printf("%g\n", data[(nc - 1) * nr + i]);
+  }
+}
+
 int main(int argc, char ** argv) {
     if(argc < 3) {
         printf("Usage:  smahal <nrows> <ncols>\n");
